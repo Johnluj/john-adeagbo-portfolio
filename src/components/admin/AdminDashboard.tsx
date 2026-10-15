@@ -10,6 +10,7 @@ import {
   APPOINTMENT_TYPES
 } from '../../data/mockData';
 import { ScrollReveal } from '../common/ScrollReveal';
+import { AnimatedCounter } from '../common/AnimatedCounter';
 import {
   LayoutDashboard,
   Inbox,
@@ -227,7 +228,7 @@ export const AdminDashboard: React.FC = () => {
                 <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1">
                   <div className="text-xs text-slate-500 font-medium">Inquiries Captured</div>
                   <div className="text-2xl font-mono font-bold text-slate-900 dark:text-white">
-                    {inquiries.length}
+                    <AnimatedCounter value={inquiries.length} duration={1.2} />
                   </div>
                   <div className="text-[10px] text-emerald-600 font-medium">
                     100% replied &lt; 24h
@@ -237,7 +238,7 @@ export const AdminDashboard: React.FC = () => {
                 <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1">
                   <div className="text-xs text-slate-500 font-medium">Booked Appointments</div>
                   <div className="text-2xl font-mono font-bold text-blue-600 dark:text-blue-400">
-                    {bookings.length}
+                    <AnimatedCounter value={bookings.length} duration={1.2} />
                   </div>
                   <div className="text-[10px] text-slate-500">Google Calendar Synced</div>
                 </div>
@@ -245,7 +246,7 @@ export const AdminDashboard: React.FC = () => {
                 <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1">
                   <div className="text-xs text-slate-500 font-medium">Quotations Sent</div>
                   <div className="text-2xl font-mono font-bold text-slate-900 dark:text-white">
-                    {quotations.length}
+                    <AnimatedCounter value={quotations.length} duration={1.2} />
                   </div>
                   <div className="text-[10px] text-emerald-600 font-medium">
                     ₦{quotations.reduce((sum, q) => sum + (q.currency === 'NGN' ? q.amount : 0), 0).toLocaleString()} pipeline
@@ -255,7 +256,7 @@ export const AdminDashboard: React.FC = () => {
                 <div className="p-4 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1">
                   <div className="text-xs text-slate-500 font-medium">Subscribers</div>
                   <div className="text-2xl font-mono font-bold text-slate-900 dark:text-white">
-                    {subscribers.length}
+                    <AnimatedCounter value={subscribers.length} duration={1.2} />
                   </div>
                   <div className="text-[10px] text-slate-500">Bi-weekly technical brief</div>
                 </div>

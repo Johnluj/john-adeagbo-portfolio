@@ -3,6 +3,7 @@ import { useApp } from '../../context/AppContext';
 import { FOUNDER_INFO, PROJECTS, SERVICES, TESTIMONIALS } from '../../data/mockData';
 import { TRANSLATIONS } from '../../data/translations';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '../common/ScrollReveal';
+import { AnimatedCounter } from '../common/AnimatedCounter';
 import {
   Calendar,
   FileText,
@@ -136,7 +137,7 @@ export const HomeView: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm">
               <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 font-mono tabular-nums">
-                  {FOUNDER_INFO.stats.projectsShipped}+
+                  <AnimatedCounter value={28} suffix="+" duration={1.8} />
                 </div>
                 <div className="text-xs font-medium text-slate-600 dark:text-slate-400">
                   {t.hero.projectsShippedLabel}
@@ -145,7 +146,7 @@ export const HomeView: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tabular-nums">
-                  {FOUNDER_INFO.stats.industriesServed}
+                  <AnimatedCounter value={6} duration={1.4} />
                 </div>
                 <div className="text-xs font-medium text-slate-600 dark:text-slate-400">
                   {t.hero.industriesLabel}
@@ -154,7 +155,7 @@ export const HomeView: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-mono tabular-nums">
-                  {FOUNDER_INFO.stats.yearsActive}+
+                  <AnimatedCounter value={4} suffix="+" duration={1.4} />
                 </div>
                 <div className="text-xs font-medium text-slate-600 dark:text-slate-400">
                   {t.hero.yearsLabel}
@@ -163,7 +164,7 @@ export const HomeView: React.FC = () => {
 
               <div className="space-y-1">
                 <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 font-mono tabular-nums">
-                  {FOUNDER_INFO.stats.auditSuccessRate}
+                  <AnimatedCounter value={100} suffix="%" duration={2.0} />
                 </div>
                 <div className="text-xs font-medium text-slate-600 dark:text-slate-400">
                   {t.hero.securityRecordLabel}
